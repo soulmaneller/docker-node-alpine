@@ -5,6 +5,6 @@ RUN apk add --update nodejs
 RUN npm i -g forever
 
 EXPOSE 3000
-WORKDIR /work
+WORKDIR /app
 # CMD forever forever/forever.json
 CMD node index.js
