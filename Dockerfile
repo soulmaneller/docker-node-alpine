@@ -3,6 +3,7 @@ MAINTAINER oxoox22@gmail.com <Oxoox Soulmaneller>
 
 RUN apk add --update nodejs
 RUN npm i -g forever
+RUN npm i -g supervisor
 
 EXPOSE 3000
 WORKDIR /app
