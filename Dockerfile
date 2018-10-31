@@ -1,10 +1,14 @@
-FROM alpine
+FROM alpine:3.8
 MAINTAINER oxoox22@gmail.com <Oxoox Soulmaneller>
 
-RUN apk add --update nodejs
-RUN npm i -g forever
-RUN npm i -g supervisor
-RUN npm i -g nodemon
+RUN apk update \
+    && apk upgrade \
+    && apk add --update nodejs npm \
+    && npm i -g npm \
+        forever \
+        supervisor \
+        nodemon \
+    && rm -rf /var/cache/apk/*
 
 EXPOSE 3000
 WORKDIR /app
